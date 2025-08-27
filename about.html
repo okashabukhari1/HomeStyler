@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HomeStyler – Modern Furniture</title>
+    <title>About Us – HomeStyler</title>
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Icons -->
@@ -18,105 +18,109 @@
     <!-- Navbar -->
     <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
         <div class="container">
-            <!-- Brand Logo (click redirects to homepage) -->
+            <!-- Brand Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
                 <img src="Images/logo.png" alt="HomeStyler Logo" class="img-fluid"
                     style="max-height:95px; width:auto; margin-right:10px;">
             </a>
 
-            <!-- Navbar Toggle (for mobile) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar Links -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
                     <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="design_styles.html">Design Styles</a></li>
                     <li class="nav-item"><a class="nav-link" href="designers.html">Designer Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
-
-
-
     <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Design Your Dream Home</h1>
-            <p>Modern furniture & elegant interiors crafted for you</p>
-            <a href="#gallery" class="btn btn-light btn-lg">Explore Gallery</a>
+    <section class="about small-hero text-center d-flex align-items-center justify-content-center">
+        <div class="container">
+            <h1 class="fw-bold">About Us</h1>
+            <p class="lead text-muted">Inspiring Homes, Creating Comfort</p>
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <h2>Furniture Gallery</h2>
+    <!-- Mission & Vision -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Our Story</h2>
+            <p class="text-muted mb-5">
+                At <span class="fw-semibold text-dark">HomeStyler</span>, we believe your home should reflect your
+                lifestyle.
+                From elegant interiors to contemporary designs, our mission is to deliver inspiration, creativity,
+                and quality furniture solutions that make your dream home a reality.
+            </p>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <img src="Images/Modern Sofa.avif" class="img-fluid gallery-img" alt="Modern Sofa">
+                <div class="col-md-6">
+                    <div class="p-4 shadow-sm rounded bg-light h-100">
+                        <i class="bi bi-bullseye fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-semibold">Our Mission</h5>
+                        <p class="small text-muted">
+                            To simplify interior design by offering stylish, affordable, and accessible design solutions
+                            for every home.
+                        </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <img src="Images/Bed.jpg" class="img-fluid gallery-img" alt="Bed">
-                </div>
-                <div class="col-md-4">
-                    <img src="Images/Living Room.png" class="img-fluid gallery-img" alt="Living Room">
+                <div class="col-md-6">
+                    <div class="p-4 shadow-sm rounded bg-light h-100">
+                        <i class="bi bi-eye fs-1 text-success mb-3"></i>
+                        <h5 class="fw-semibold">Our Vision</h5>
+                        <p class="small text-muted">
+                            To become the leading hub for home design inspiration and connect people with top interior
+                            designers worldwide.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Button under gallery, centered -->
-        <div class="text-center mt-4">
-            <a href="design_styles.html" class="btn btn-dark btn-lg rounded-pill shadow">
-                View Full Gallery
-            </a>
-        </div>
     </section>
 
-
-    <!-- Why Choose Us Section -->
-    <section class="py-5 bg-light" id="why-choose-us">
-        <div class="container text-center">
-            <h2 class="mb-4 fw-bold">Why Choose Us</h2>
-            <p class="text-muted mb-5">At <span class="text-dark fw-semibold">HomeStyler Furniture</span>, we bring
-                style, comfort, and quality into your home with care and craftsmanship.</p>
-
+    <!-- Team Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Meet Our Team</h2>
             <div class="row g-4">
                 <div class="col-md-3">
-                    <div class="p-4 shadow-sm rounded bg-white h-100 hover-effect">
-                        <i class="bi bi-star-fill text-warning fs-1 mb-3"></i>
-                        <h5 class="fw-semibold">Premium Quality</h5>
-                        <p class="text-muted small">Crafted from the finest materials for long-lasting durability.</p>
+                    <div class="card shadow-sm h-100 text-center">
+                        <img src="Images/team1.jpg" class="card-img-top" alt="Hashim">
+                        <div class="card-body">
+                            <h5 class="card-title">Hashim</h5>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="p-4 shadow-sm rounded bg-white h-100 hover-effect">
-                        <i class="bi bi-brush text-primary fs-1 mb-3"></i>
-                        <h5 class="fw-semibold">Modern Designs</h5>
-                        <p class="text-muted small">Stylish furniture that fits perfectly in every home interior.</p>
+                    <div class="card shadow-sm h-100 text-center">
+                        <img src="Images/team2.jpg" class="card-img-top" alt="Okasha">
+                        <div class="card-body">
+                            <h5 class="card-title">Okasha</h5>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="p-4 shadow-sm rounded bg-white h-100 hover-effect">
-                        <i class="bi bi-people-fill text-success fs-1 mb-3"></i>
-                        <h5 class="fw-semibold">Expert Team</h5>
-                        <p class="text-muted small">Designed and built by experienced craftsmen and designers.</p>
+                    <div class="card shadow-sm h-100 text-center">
+                        <img src="Images/team3.jpg" class="card-img-top" alt="Humayun">
+                        <div class="card-body">
+                            <h5 class="card-title">Humayun</h5>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="p-4 shadow-sm rounded bg-white h-100 hover-effect">
-                        <i class="bi bi-truck text-danger fs-1 mb-3"></i>
-                        <h5 class="fw-semibold">Fast Delivery</h5>
-                        <p class="text-muted small">Free and quick delivery right to your doorstep.</p>
+                    <div class="card shadow-sm h-100 text-center">
+                        <img src="Images/team4.jpg" class="card-img-top" alt="Waleed">
+                        <div class="card-body">
+                            <h5 class="card-title">Waleed</h5>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,20 +190,8 @@
         </div>
     </footer>
 
-
-    <!-- Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-transparent border-0">
-                <img id="modalImage" src="" class="img-fluid rounded" alt="">
-            </div>
-        </div>
-    </div>
-
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="script.js"></script>
 </body>
 
 </html>

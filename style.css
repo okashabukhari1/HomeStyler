@@ -8,6 +8,17 @@ body {
     background: #222;
 }
 
+.about,
+.contact {
+    height: 40vh;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
 .hero {
     height: 90vh;
     background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
@@ -190,4 +201,207 @@ body {
 #mainNav.navbar-shrink .navbar-brand img {
     max-height: 30px;
     /* smaller when scrolled */
+}
+
+/* Gallery Button Styling */
+.btn-gallery {
+    background: #111;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 12px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-gallery:hover {
+    background: #444;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation */
+.animate-btn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------------------
+   Button Styling
+---------------------------- */
+.btn-gallery {
+    background: #111;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 12px 36px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-gallery:hover {
+    background: #444;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation */
+.animate-btn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.animate-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------------------------
+   Gallery Images Hover Effect
+---------------------------- */
+#gallery img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+#gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Card hover animation */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger delay */
+.fade-in:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.fade-in:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.fade-in:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.fade-in:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.fade-in:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+/* Modal image animation */
+#modalImage {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s ease-in-out;
+}
+
+.modal.show #modalImage {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Intro section styling */
+section {
+    transition: all 0.3s ease-in-out;
+}
+
+section h2 {
+    color: #212529;
+}
+
+section p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Light Intro Section (Design Styles Page) */
+section.page-intro-light {
+    background: linear-gradient(135deg, #ada8a8, #bbb9b7);
+    /* white + peach */
+    color: #070808;
+    padding: 4rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 2rem 2rem;
+}
+
+section.page-intro-light h2 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #b85c38;
+    /* warm accent color */
+}
+
+section.page-intro-light p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+.hero {
+    background: url('Images/products-hero.jpg') center/cover no-repeat;
+    color: #fff;
+}
+
+.star-rating .bi-star-fill {
+    color: gold;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+}
+
+.wishlist-table th,
+.wishlist-table td {
+    vertical-align: middle;
 }
