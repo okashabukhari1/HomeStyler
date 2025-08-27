@@ -1,0 +1,193 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.navbar {
+    background: #222;
+}
+
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.gallery {
+    padding: 4rem 2rem;
+}
+
+.gallery h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-img {
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.features h2 {
+    font-weight: bold;
+}
+
+.features i {
+    color: #222;
+}
+
+footer {
+    background: #222;
+    color: #ccc;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+/* Navbar Styling */
+#mainNav {
+    background: rgba(33, 37, 41, 0.95);
+    /* semi-transparent dark */
+    transition: background 0.3s ease-in-out;
+}
+
+#mainNav .nav-link {
+    color: #f8f9fa;
+    font-weight: 500;
+    margin-left: 15px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+#mainNav .nav-link:hover {
+    color: #ffb347;
+    /* warm gold highlight */
+    border-bottom: 2px solid #ffb347;
+}
+
+#mainNav .nav-link.active {
+    color: #ffb347;
+    border-bottom: 2px solid #ffb347;
+}
+
+/* Why Choose Us hover effect */
+.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.footer {
+    background: #111;
+}
+
+.footer h6 {
+    color: #f8f9fa;
+    margin-bottom: 1rem;
+}
+
+.footer-link {
+    color: #bbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #f8f9fa;
+}
+
+.social-link {
+    display: inline-block;
+    color: #bbb;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #f8f9fa;
+}
+
+/* Prevent navbar overlap */
+body {
+    padding-top: 120px;
+    /* match your navbar height */
+}
+
+/* Navbar base (transparent at top, shorter height) */
+#mainNav {
+    transition: all 0.3s ease-in-out;
+    padding: 10px 0;
+    /* reduced from 20px */
+    background-color: transparent;
+}
+
+/* Shrunk navbar (even smaller on scroll) */
+#mainNav.navbar-shrink {
+    padding: 4px 0;
+    /* reduced from 8px */
+    background-color: #111;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo resizing */
+#mainNav .navbar-brand img {
+    max-height: 20px;
+    /* smaller default */
+    transition: max-height 0.3s ease-in-out;
+}
+
+#mainNav.navbar-shrink .navbar-brand img {
+    max-height: 30px;
+    /* smaller when scrolled */
+}
