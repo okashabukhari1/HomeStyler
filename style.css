@@ -8,12 +8,8 @@ body {
     background: #222;
 }
 
-<<<<<<< HEAD
-.about, .contact{
-=======
 .about,
 .contact {
->>>>>>> acbd6d7620722676438c0b0f2ccf48595527ab92
     height: 40vh;
     background-color: #f0f0f0;
     display: flex;
@@ -228,17 +224,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Animation */
-.animate-btn {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-
-.animate-btn.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ---------------------------
    Button Styling
@@ -263,17 +248,7 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Animation */
-.animate-btn {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
 
-.animate-btn.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 /* ---------------------------
    Gallery Images Hover Effect
@@ -392,7 +367,7 @@ section.page-intro-light p {
 }
 
 .hero {
-    background: url('Images/products-hero.jpg') center/cover no-repeat;
+
     color: #fff;
 }
 
@@ -408,4 +383,157 @@ section.page-intro-light p {
 .wishlist-table th,
 .wishlist-table td {
     vertical-align: middle;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    padding-top: 120px;
+}
+
+.navbar {
+    background: #222;
+}
+
+.nav-link.active {
+    color: #ffb347 !important;
+}
+
+.small-hero {
+    padding: 80px 0;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.card img {
+    border-radius: 12px 12px 0 0;
+    height: 250px;
+    object-fit: cover;
+}
+
+.btn-contact-designer {
+    display: inline-block;
+    margin-top: 20px;
+    background: #111;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+}
+/* Hero section */
+.small-hero {
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.small-hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.small-hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Feedback Form */
+#feedbackForm .form-label {
+    font-weight: 500;
+}
+
+#feedbackForm button {
+    border-radius: 50px;
+    padding: 10px 30px;
+}
+
+/* Feedback Cards */
+#feedbackList .card {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#feedbackList .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Navbar */
+.navbar .nav-link.active {
+    color: #ffb347 !important;
+}
+/* Designer Card Styles */
+.designer-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.designer-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.designer-card .card-img-container {
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+}
+
+.designer-card .card-img-container img {
+  transition: transform 0.5s;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.designer-card:hover .card-img-container img {
+  transform: scale(1.1);
+}
+
+.designer-card .card-body {
+  padding: 1.25rem;
+}
+
+.designer-card .card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.designer-card .card-text {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.designer-card .btn-dark {
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Designer modal images */
+.modal-body img {
+    width: 180px;           /* slightly bigger for better quality */
+    height: 180px;
+    object-fit: cover;      /* keep aspect ratio and fill space */
+    border-radius: 50%;     /* circular */
+    border: 4px solid #333; /* stylish border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* subtle shadow */
+    image-rendering: auto;  /* ensure smooth scaling */
+    transition: transform 0.3s ease;
+}
+
+/* Optional: add hover effect for style */
+.modal-body img:hover {
+    transform: scale(1.05);
 }

@@ -393,4 +393,107 @@ function renderWishlist() {
 
 // Initial render
 renderProducts();
+// Initialize AOS
+
+// Animate hero text on page load
+window.addEventListener('load', () => {
+    document.querySelector('.animate-slide').classList.add('appear');
+    document.querySelector('.animate-slide-delay').classList.add('appear');
+});
+const feedbackForm = document.getElementById('feedbackForm');
+const feedbackList = document.getElementById('feedbackList');
+
+// Load feedback from localStorage
+let feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+
+function displayFeedback() {
+    feedbackList.innerHTML = '';
+    feedbacks.slice().reverse().forEach(fb => {
+        const div = document.createElement('div');
+        div.className = 'col-md-6';
+        div.innerHTML = `
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">${fb.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${fb.email}</h6>
+                    <p class="card-text">${fb.message}</p>
+                </div>
+            </div>
+        `;
+        feedbackList.appendChild(div);
+    });
+}
+
+displayFeedback();
+
+feedbackForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newFeedback = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+    };
+    feedbacks.push(newFeedback);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+    feedbackForm.reset();
+    displayFeedback();
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('mainNav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // --- Active link highlighting ---
+    const currentPage = window.location.pathname.split("/").pop().toLowerCase().split('#')[0];
+    navLinks.forEach(link => {
+        const linkPage = link.getAttribute('href').split("/").pop().toLowerCase().split('#')[0];
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+
+    // --- Navbar shrink effect ---
+    const SHRINK_CLASS = 'navbar-shrink';
+    const THRESHOLD = 50; // scroll threshold in px
+
+    function applyNavbarShrink() {
+        if (window.scrollY > THRESHOLD) {
+            navbar.classList.add(SHRINK_CLASS);
+        } else {
+            navbar.classList.remove(SHRINK_CLASS);
+        }
+    }
+
+    // Run on scroll and on load
+    window.addEventListener('scroll', applyNavbarShrink, { passive: true });
+    applyNavbarShrink();
+});
+// Optional: Slight fade-up animation on scroll for cards
+const designerCards = document.querySelectorAll('.designer-card');
+
+window.addEventListener('scroll', () => {
+  designerCards.forEach(card => {
+    const rect = card.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
+    }
+  });
+});
+
+// Initialize all cards hidden for scroll animation
+designerCards.forEach(card => {
+  card.style.opacity = 0;
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = 'all 0.6s ease';
+});
+// Navbar shrink on scroll
+const navbar = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) navbar.classList.add('navbar-shrink');
+  else navbar.classList.remove('navbar-shrink');
+});
+
+
 

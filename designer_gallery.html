@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HomeStyler - Design Styles</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="Images/logo.png" alt="HomeStyler Logo" class="img-fluid"
+          style="max-height:95px; width:auto; margin-right:10px;">
+      </a>
+
+      <!-- Navbar Toggle (for mobile) -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="design_styles.html">Design Styles</a></li>
+          <li class="nav-item"><a class="nav-link" href="designer_gallery.html">Designer Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  </nav>
+
+  
+  <section class="about small-hero text-center d-flex align-items-center justify-content-center">
+    <div class="container">
+      <h2>Discover Your Perfect Style</h2>
+      <p>
+        Explore a variety of design styles that bring life to your home.
+        From sleek modern minimalism to cozy traditional interiors,
+        find inspiration that fits your personality and lifestyle.
+      </p>
+    </div>
+  </section>
+
+  <!-- Designer Grid -->
+  <section class="container my-5">
+    <div class="row g-4">
+
+      <!-- Designer Card Template -->
+      <div class="col-md-4">
+        <div class="card designer-card h-100 shadow-sm">
+          <img src="" class="card-img-top" alt="Sophia Johnson">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Sophia Johnson</h5>
+            <p class="card-text flex-grow-1">Modern Minimalist Interiors</p>
+            <button class="btn btn-dark w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#designerModal1">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card designer-card h-100 shadow-sm">
+          <img src="" class="card-img-top" alt="Liam Martinez">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Liam Martinez</h5>
+            <p class="card-text flex-grow-1">Luxury Living Spaces</p>
+            <button class="btn btn-dark w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#designerModal2">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card designer-card h-100 shadow-sm">
+          <img src="" class="card-img-top" alt="Emma Williams">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Emma Williams</h5>
+            <p class="card-text flex-grow-1">Cozy, Functional Homes</p>
+            <button class="btn btn-dark w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#designerModal3">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card designer-card h-100 shadow-sm">
+          <img src="" class="card-img-top" alt="Noah Brown">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Noah Brown</h5>
+            <p class="card-text flex-grow-1">Sustainable Design</p>
+            <button class="btn btn-dark w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#designerModal4">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card designer-card h-100 shadow-sm">
+          <img src="" class="card-img-top" alt="Olivia Davis">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Olivia Davis</h5>
+            <p class="card-text flex-grow-1">Eclectic Interior Styles</p>
+            <button class="btn btn-dark w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#designerModal5">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card designer-card h-100 shadow-sm">
+          <img src="" class="card-img-top" alt="Ethan Wilson">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Ethan Wilson</h5>
+            <p class="card-text flex-grow-1">Contemporary Homes & Offices</p>
+            <button class="btn btn-dark w-100 mt-auto" data-bs-toggle="modal" data-bs-target="#designerModal6">View
+              Details</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Designer 1 Modal -->
+  <div class="modal fade" id="designerModal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded shadow-sm">
+        <div class="modal-body p-4 text-center">
+          <img src="https://picsum.photos/id/1011/150/150" alt="Sophia Johnson" class="rounded-circle mb-3"
+            style="width:150px; height:150px; object-fit:cover; border:3px solid #333;">
+          <h4 class="fw-bold mb-1">Sophia Johnson</h4>
+          <p class="text-muted mb-3">Modern Minimalist Interiors</p>
+          <p>Sophia creates sleek and functional living spaces tailored to her clients’ lifestyles, blending minimalism
+            with comfort.</p>
+          <p class="mb-0"><strong>Contact:</strong> sophia.johnson@example.com | +1-555-1234</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Designer 2 Modal -->
+  <div class="modal fade" id="designerModal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded shadow-sm">
+        <div class="modal-body p-4 text-center">
+          <img src="https://picsum.photos/id/1005/150/150" alt="Liam Martinez" class="rounded-circle mb-3"
+            style="width:150px; height:150px; object-fit:cover; border:3px solid #333;">
+          <h4 class="fw-bold mb-1">Liam Martinez</h4>
+          <p class="text-muted mb-3">Luxury Living Spaces</p>
+          <p>Liam designs luxurious interiors combining elegance with functionality, ensuring every space feels
+            sophisticated yet livable.</p>
+          <p class="mb-0"><strong>Contact:</strong> liam.martinez@example.com | +1-555-2345</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Designer 3 Modal -->
+  <div class="modal fade" id="designerModal3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded shadow-sm">
+        <div class="modal-body p-4 text-center">
+          <img src="https://picsum.photos/id/1027/150/150" alt="Emma Williams" class="rounded-circle mb-3"
+            style="width:150px; height:150px; object-fit:cover; border:3px solid #333;">
+          <h4 class="fw-bold mb-1">Emma Williams</h4>
+          <p class="text-muted mb-3">Cozy, Functional Homes</p>
+          <p>Emma focuses on creating clean and harmonious living spaces, balancing comfort with practical design
+            solutions.</p>
+          <p class="mb-0"><strong>Contact:</strong> emma.williams@example.com | +1-555-3456</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Designer 4 Modal -->
+  <div class="modal fade" id="designerModal4" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded shadow-sm">
+        <div class="modal-body p-4 text-center">
+          <img src="https://picsum.photos/id/1025/150/150" alt="Noah Brown" class="rounded-circle mb-3"
+            style="width:150px; height:150px; object-fit:cover; border:3px solid #333;">
+          <h4 class="fw-bold mb-1">Noah Brown</h4>
+          <p class="text-muted mb-3">Sustainable Design</p>
+          <p>Noah integrates eco-friendly materials and energy-efficient designs into modern interiors, creating spaces
+            that are both stylish and responsible.</p>
+          <p class="mb-0"><strong>Contact:</strong> noah.brown@example.com | +1-555-4567</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Designer 5 Modal -->
+  <div class="modal fade" id="designerModal5" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded shadow-sm">
+        <div class="modal-body p-4 text-center">
+          <img src="https://picsum.photos/id/1035/150/150" alt="Olivia Davis" class="rounded-circle mb-3"
+            style="width:150px; height:150px; object-fit:cover; border:3px solid #333;">
+          <h4 class="fw-bold mb-1">Olivia Davis</h4>
+          <p class="text-muted mb-3">Eclectic Interior Styles</p>
+          <p>Olivia blends diverse styles to create unique, personalized interiors that reflect each client’s
+            personality and taste.</p>
+          <p class="mb-0"><strong>Contact:</strong> olivia.davis@example.com | +1-555-5678</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Designer 6 Modal -->
+  <div class="modal fade" id="designerModal6" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 rounded shadow-sm">
+        <div class="modal-body p-4 text-center">
+          <img src="https://picsum.photos/id/1042/150/150" alt="Ethan Wilson" class="rounded-circle mb-3"
+            style="width:150px; height:150px; object-fit:cover; border:3px solid #333;">
+          <h4 class="fw-bold mb-1">Ethan Wilson</h4>
+          <p class="text-muted mb-3">Contemporary Homes & Offices</p>
+          <p>Ethan creates modern and functional living and workspace interiors, combining elegance with practicality.
+          </p>
+          <p class="mb-0"><strong>Contact:</strong> ethan.wilson@example.com | +1-555-6789</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Footer -->
+  <footer class="footer text-light pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+
+        <!-- Logo & About -->
+        <div class="col-md-4 mb-4">
+          <a href="index.html" class="d-flex align-items-center mb-3">
+            <img src="Images/logo.png" alt="HomeStyler Logo" class="me-2" style="width:120px;">
+          </a>
+          <p class="small">
+            Bringing comfort, style, and durability to your home with
+            our premium furniture collections.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-bold">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="products.html" class="footer-link">Products</a></li>
+            <li><a href="design_styles.html" class="footer-link">Design Styles</a></li>
+            <li><a href="designers.html" class="footer-link">Designer Gallery</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">Our Services</h6>
+          <ul class="list-unstyled small">
+            <li><a href="#" class="footer-link">Custom Furniture</a></li>
+            <li><a href="#" class="footer-link">Interior Consultation</a></li>
+            <li><a href="#" class="footer-link">Fast Delivery</a></li>
+            <li><a href="#" class="footer-link">Furniture Repair</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold">Contact Us</h6>
+          <p class="small mb-1"><i class="bi bi-geo-alt-fill me-2"></i>123 Main Street, Karachi, Pakistan</p>
+          <p class="small mb-1"><i class="bi bi-telephone-fill me-2"></i>+92 300 1234567</p>
+          <p class="small mb-3"><i class="bi bi-envelope-fill me-2"></i>info@homestyler.com</p>
+          <div>
+            <a href="https://web.facebook.com/" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" class="social-link"><i class="bi bi-instagram"></i></a>
+            <a href="https://x.com/" class="social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.youtube.com/" class="social-link"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <hr class="bg-light">
+      <div class="text-center small">
+        © 2025 HomeStyler Furniture | All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <img id="modalImage" src="" class="img-fluid rounded" alt="">
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
