@@ -37,6 +37,10 @@
                     <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
                 </ul>
+                <!-- Floating Cart Icon -->
+                <a href="cart.html" id="cart-icon">
+                    🛒 <span id="cart-count">0</span>
+                </a>
             </div>
         </div>
     </nav>
@@ -66,33 +70,7 @@
 
             <select id="subcategoryFilter" class="form-select">
                 <option value="">All Subcategories</option>
-
-            <!-- Furniture Subcategories -->
-            <option value="Sofas and Couches">Sofas and Couches</option>
-            <option value="Chairs and Recliners">Chairs and Recliners</option>
-            <option value="Tables">Tables</option>
-
-            <!-- Lighting Subcategories -->
-            <option value="Ceiling Lights">Ceiling Lights</option>
-            <option value="Wall Lights">Wall Lights</option>
-            <option value="Table Lamps">Table Lamps</option>
-
-            <!-- Decor Subcategories -->
-            <option value="Rugs and Carpets">Rugs and Carpets</option>
-            <option value="Wall Art and Mirrors">Wall Art and Mirrors</option>
-            <option value="Vases and Plant Pots">Vases and Plant Pots</option>
-
-            <!-- Kitchen Subcategories -->
-            <option value="Cabinets and Pantries">Cabinets and Pantries</option>
-            <option value="Countertops">Countertops</option>
-            <option value="Sinks and Faucets">Sinks and Faucets</option>
-
-            <!-- Bathroom Subcategories -->
-            <option value="Vanities and Cabinets">Vanities and Cabinets</option>
-            <option value="Showers and Bathtubs">Showers and Bathtubs</option>
-            <option value="Toilets and Bidets">Toilets and Bidets</option>
             </select>
-
 
             <select id="priceFilter" class="form-select">
                 <option value="">All Prices</option>
@@ -108,242 +86,15 @@
                 <option value="4">★★★★ & Up</option>
                 <option value="3">★★★ & Up</option>
             </select>
+
             <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
         </div>
     </div>
 
     <!-- Products Section -->
     <section class="products container my-5">
-        <div class="row g-4" id="productList">
-
-            <!-- Furniture: Sofas and Couches -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Furniture"
-                    data-subcategory="Sofas and Couches" data-price="600" data-rating="5">
-                    <img src="Images/ModernSofa.jpg" class="card-img-top" alt="Modern Sofa">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Modern Sofa</h5>
-                        <p class="card-text flex-grow-1">Comfortable modern sofa perfect for living rooms.</p>
-                        <p class="fw-bold">$600</p>
-                        <p class="rating">★★★★★</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Furniture: Chairs and Recliners -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Furniture"
-                    data-subcategory="Chairs and Recliners" data-price="350" data-rating="4">
-                    <img src="Images/ReclinerChair.jpg" class="card-img-top" alt="Recliner Chair">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Recliner Chair</h5>
-                        <p class="card-text flex-grow-1">Comfortable recliner with premium leather.</p>
-                        <p class="fw-bold">$350</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Furniture: Tables -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Furniture"
-                    data-subcategory="Tables" data-price="450" data-rating="4">
-                    <img src="Images/DiningTable.jpeg" class="card-img-top" alt="Dining Table">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Dining Table</h5>
-                        <p class="card-text flex-grow-1">Sturdy wooden dining table for family meals.</p>
-                        <p class="fw-bold">$450</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lighting: Ceiling Lights -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Lighting"
-                    data-subcategory="Ceiling Lights" data-price="400" data-rating="5">
-                    <img src="Images/LuxuryChandelier.png" class="card-img-top" alt="Luxury Chandelier">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Luxury Chandelier</h5>
-                        <p class="card-text flex-grow-1">Elegant chandelier for dining rooms.</p>
-                        <p class="fw-bold">$400</p>
-                        <p class="rating">★★★★★</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lighting: Wall Lights -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Lighting"
-                    data-subcategory="Wall Lights" data-price="150" data-rating="3">
-                    <img src="Images/WallSconce.jpg" class="card-img-top" alt="Wall Sconce">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Wall Sconce</h5>
-                        <p class="card-text flex-grow-1">Stylish wall light for bedrooms and hallways.</p>
-                        <p class="fw-bold">$150</p>
-                        <p class="rating">★★★☆☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Lighting: Table Lamps -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Lighting"
-                    data-subcategory="Table Lamps" data-price="80" data-rating="4">
-                    <img src="Images/TableLamp.jpg" class="card-img-top" alt="Table Lamp">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Table Lamp</h5>
-                        <p class="card-text flex-grow-1">Modern table lamp for bedside tables or offices.</p>
-                        <p class="fw-bold">$80</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Decor: Rugs and Carpets -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Decor"
-                    data-subcategory="Rugs and Carpets" data-price="300" data-rating="4">
-                    <img src="Images/PersianRug.jpg" class="card-img-top" alt="Persian Rug">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Persian Rug</h5>
-                        <p class="card-text flex-grow-1">Elegant Persian rug for living areas.</p>
-                        <p class="fw-bold">$300</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Decor: Wall Art and Mirrors -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Decor"
-                    data-subcategory="Wall Art and Mirrors" data-price="250" data-rating="5">
-                    <img src="Images/WallMirror.jpg" class="card-img-top" alt="Wall Mirror">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Wall Mirror</h5>
-                        <p class="card-text flex-grow-1">Stylish wall mirror to enhance home decor.</p>
-                        <p class="fw-bold">$250</p>
-                        <p class="rating">★★★★★</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Decor: Vases and Plant Pots -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Decor"
-                    data-subcategory="Vases and Plant Pots" data-price="90" data-rating="4">
-                    <img src="Images/DecorativeVase.jpg" class="card-img-top" alt="Decorative Vase">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Decorative Vase</h5>
-                        <p class="card-text flex-grow-1">Elegant vase to enhance your living room.</p>
-                        <p class="fw-bold">$90</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kitchen: Cabinets and Pantries -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Kitchen"
-                    data-subcategory="Cabinets and Pantries" data-price="800" data-rating="4">
-                    <img src="Images/ModernCabinet.jpg" class="card-img-top" alt="Kitchen Cabinet">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Modern Cabinet</h5>
-                        <p class="card-text flex-grow-1">Stylish kitchen cabinet with ample storage.</p>
-                        <p class="fw-bold">$800</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kitchen: Countertops -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Kitchen"
-                    data-subcategory="Countertops" data-price="1200" data-rating="5">
-                    <img src="Images/GraniteCountertop.webp" class="card-img-top" alt="Granite Countertop">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Granite Countertop</h5>
-                        <p class="card-text flex-grow-1">High-quality granite countertop for modern kitchens.</p>
-                        <p class="fw-bold">$1,200</p>
-                        <p class="rating">★★★★★</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kitchen: Sinks and Faucets -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Kitchen"
-                    data-subcategory="Sinks and Faucets" data-price="350" data-rating="4">
-                    <img src="Images/StainlessSink.avif" class="card-img-top" alt="Stainless Sink">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Stainless Sink</h5>
-                        <p class="card-text flex-grow-1">Durable stainless steel sink for kitchens.</p>
-                        <p class="fw-bold">$350</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bathroom: Vanities and Cabinets -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Bathroom"
-                    data-subcategory="Vanities and Cabinets" data-price="600" data-rating="4">
-                    <img src="Images/BathroomVanity.jpg" class="card-img-top" alt="Bathroom Vanity">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Bathroom Vanity</h5>
-                        <p class="card-text flex-grow-1">Stylish vanity for modern bathrooms.</p>
-                        <p class="fw-bold">$600</p>
-                        <p class="rating">★★★★☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bathroom: Showers and Bathtubs -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Bathroom"
-                    data-subcategory="Showers and Bathtubs" data-price="900" data-rating="5">
-                    <img src="Images/GlassShower.jpg" class="card-img-top" alt="Glass Shower">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Glass Shower</h5>
-                        <p class="card-text flex-grow-1">Modern shower with sleek glass panels.</p>
-                        <p class="fw-bold">$900</p>
-                        <p class="rating">★★★★★</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bathroom: Toilets and Bidets -->
-            <div class="col-md-4">
-                <div class="card product-card h-100 shadow-sm animate-card" data-category="Bathroom"
-                    data-subcategory="Toilets and Bidets" data-price="280" data-rating="3">
-                    <img src="Images/ToiletSeat.jpg" class="card-img-top" alt="Toilet Seat">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Toilet Seat</h5>
-                        <p class="card-text flex-grow-1">Comfortable toilet seat for bathroom use.</p>
-                        <p class="fw-bold">$280</p>
-                        <p class="rating">★★★☆☆</p>
-                        <button class="btn btn-dark w-100 mt-auto add-to-wishlist">Add to Wishlist</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        <div class="row g-4" id="products-container"></div>
     </section>
-
     </main>
 
     <!-- Footer -->
@@ -421,6 +172,346 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="script.js"></script>
+    <script>
+        const products = [
+            {
+                "id": 1,
+                "name": "Modern Sofa",
+                "image": "Images/ModernSofa.jpg",
+                "price": 600,
+                "desc": "Comfortable modern sofa perfect for living rooms.",
+                "category": "Furniture",
+                "subcategory": "Sofas and Couches",
+                "rating": 5
+            },
+            {
+                "id": 2,
+                "name": "Recliner Chair",
+                "image": "Images/ReclinerChair.jpg",
+                "price": 350,
+                "desc": "Comfortable recliner with premium leather.",
+                "category": "Furniture",
+                "subcategory": "Chairs and Recliners",
+                "rating": 4
+            },
+            {
+                "id": 3,
+                "name": "Dining Table",
+                "image": "Images/DiningTable.jpeg",
+                "price": 450,
+                "desc": "Sturdy wooden dining table for family meals.",
+                "category": "Furniture",
+                "subcategory": "Tables",
+                "rating": 4
+            },
+            {
+                "id": 4,
+                "name": "Luxury Chandelier",
+                "image": "Images/LuxuryChandelier.png",
+                "price": 400,
+                "desc": "Elegant chandelier for dining rooms.",
+                "category": "Lighting",
+                "subcategory": "Ceiling Lights",
+                "rating": 5
+            },
+            {
+                "id": 5,
+                "name": "Wall Sconce",
+                "image": "Images/WallSconce.jpg",
+                "price": 150,
+                "desc": "Stylish wall light for bedrooms and hallways.",
+                "category": "Lighting",
+                "subcategory": "Wall Lights",
+                "rating": 3
+            },
+            {
+                "id": 6,
+                "name": "Table Lamp",
+                "image": "Images/TableLamp.jpg",
+                "price": 80,
+                "desc": "Modern table lamp for bedside tables or offices.",
+                "category": "Lighting",
+                "subcategory": "Table Lamps",
+                "rating": 4
+            },
+            {
+                "id": 7,
+                "name": "Persian Rug",
+                "image": "Images/PersianRug.jpg",
+                "price": 300,
+                "desc": "Elegant Persian rug for living areas.",
+                "category": "Decor",
+                "subcategory": "Rugs and Carpets",
+                "rating": 4
+            },
+            {
+                "id": 8,
+                "name": "Wall Mirror",
+                "image": "Images/WallMirror.jpg",
+                "price": 250,
+                "desc": "Stylish wall mirror to enhance home decor.",
+                "category": "Decor",
+                "subcategory": "Wall Art and Mirrors",
+                "rating": 5
+            },
+            {
+                "id": 9,
+                "name": "Decorative Vase",
+                "image": "Images/DecorativeVase.jpg",
+                "price": 90,
+                "desc": "Elegant vase to enhance your living room.",
+                "category": "Decor",
+                "subcategory": "Vases and Plant Pots",
+                "rating": 4
+            },
+            {
+                "id": 10,
+                "name": "Modern Cabinet",
+                "image": "Images/ModernCabinet.jpg",
+                "price": 800,
+                "desc": "Stylish kitchen cabinet with ample storage.",
+                "category": "Kitchen",
+                "subcategory": "Cabinets and Pantries",
+                "rating": 4
+            },
+            {
+                "id": 11,
+                "name": "Granite Countertop",
+                "image": "Images/GraniteCountertop.webp",
+                "price": 1200,
+                "desc": "High-quality granite countertop for modern kitchens.",
+                "category": "Kitchen",
+                "subcategory": "Countertops",
+                "rating": 5
+            },
+            {
+                "id": 12,
+                "name": "Stainless Sink",
+                "image": "Images/StainlessSink.avif",
+                "price": 350,
+                "desc": "Durable stainless steel sink for kitchens.",
+                "category": "Kitchen",
+                "subcategory": "Sinks and Faucets",
+                "rating": 4
+            },
+            {
+                "id": 13,
+                "name": "Bathroom Vanity",
+                "image": "Images/BathroomVanity.jpg",
+                "price": 600,
+                "desc": "Stylish vanity for modern bathrooms.",
+                "category": "Bathroom",
+                "subcategory": "Vanities and Cabinets",
+                "rating": 4
+            },
+            {
+                "id": 14,
+                "name": "Glass Shower",
+                "image": "Images/GlassShower.jpg",
+                "price": 900,
+                "desc": "Modern shower with sleek glass panels.",
+                "category": "Bathroom",
+                "subcategory": "Showers and Bathtubs",
+                "rating": 5
+            },
+            {
+                "id": 15,
+                "name": "Toilet Seat",
+                "image": "Images/ToiletSeat.jpg",
+                "price": 280,
+                "desc": "Comfortable toilet seat for bathroom use.",
+                "category": "Bathroom",
+                "subcategory": "Toilets and Bidets",
+                "rating": 3
+            }
+        ]
+
+        // Subcategories mapping
+        function updateSubcategories(category) {
+            const subFilter = document.getElementById("subcategoryFilter");
+            subFilter.innerHTML = `<option value="">All Subcategories</option>`;
+
+            if (category && subcategories[category]) {
+                // Show only subcategories of selected category
+                subcategories[category].forEach(sub => {
+                    const opt = document.createElement("option");
+                    opt.value = sub;
+                    opt.textContent = sub;
+                    subFilter.appendChild(opt);
+                });
+            } else {
+                // ✅ Default: show all subcategories from all categories
+                Object.keys(subcategories).forEach(cat => {
+                    subcategories[cat].forEach(sub => {
+                        const opt = document.createElement("option");
+                        opt.value = sub;
+                        opt.textContent = `${cat} → ${sub}`; // clearer grouping
+                        subFilter.appendChild(opt);
+                    });
+                });
+            }
+        }
+
+
+        function getStars(rating) {
+            return "★".repeat(rating) + "☆".repeat(5 - rating);
+        }
+
+        function renderProducts(list) {
+            const container = document.getElementById("products-container");
+            container.innerHTML = "";
+
+            if (list.length === 0) {
+                container.innerHTML = `<p class="text-center">No products found.</p>`;
+                return;
+            }
+
+            list.forEach(p => {
+                const col = document.createElement("div");
+                col.className = "col-md-4";
+
+                col.innerHTML = `
+      <div class="card product-card h-100 shadow-sm">
+        <img src="${p.image}" class="card-img-top" alt="${p.name}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${p.name}</h5>
+          <p class="card-text flex-grow-1">${p.desc}</p>
+          <p class="fw-bold text-black">$${p.price}</p>
+          <p class="rating">${getStars(p.rating)}</p>
+          <button class="btn btn-wishlist w-100 mt-auto add-to-wishlist"
+            data-id="${p.id}"
+            data-name="${p.name}"
+            data-image="${p.image}"
+            data-price="${p.price}">
+            Add to Wishlist
+          </button>
+          <button class="btn btn-dark w-100 mt-2 add-to-cart"
+            data-id="${p.id}"
+            data-name="${p.name}"
+            data-image="${p.image}"
+            data-price="${p.price}">
+            Add to Cart
+        </button>
+
+        </div>
+      </div>
+    `;
+                container.appendChild(col);
+            });
+
+            // Cart function
+            container.querySelectorAll(".add-to-cart").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const product = {
+                        id: btn.dataset.id,
+                        name: btn.dataset.name,
+                        image: btn.dataset.image,
+                        price: parseFloat(btn.dataset.price),
+                        quantity: 1
+                    };
+
+                    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+                    // Check if product exists in cart
+                    const existing = cart.find(item => item.id === product.id);
+                    if (existing) {
+                        existing.quantity += 1; // increment quantity
+                    } else {
+                        cart.push(product);
+                    }
+
+                    localStorage.setItem("cart", JSON.stringify(cart));
+
+                    btn.textContent = "✔ Added to Cart";
+                    setTimeout(() => (btn.textContent = "🛒 Add to Cart"), 2000);
+                });
+            });
+
+
+            // ✅ Attach event listeners for wishlist
+            container.querySelectorAll(".add-to-wishlist").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const product = {
+                        id: btn.dataset.id,
+                        name: btn.dataset.name,
+                        image: btn.dataset.image,
+                        price: btn.dataset.price
+                    };
+
+                    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+                    // Prevent duplicates
+                    if (!wishlist.some(item => item.id === product.id)) {
+                        wishlist.push(product);
+                        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+                        btn.textContent = "✔ Added to Wishlist";
+                        btn.disabled = true;
+                    } else {
+                        btn.textContent = "❤️ Already in Wishlist";
+                        btn.disabled = true;
+                    }
+                });
+            });
+        }
+
+
+        function applyFilters() {
+            let filtered = [...products];
+
+            const category = document.getElementById("categoryFilter").value;
+            const subcategory = document.getElementById("subcategoryFilter").value;
+            const priceRange = document.getElementById("priceFilter").value;
+            const rating = document.getElementById("ratingFilter").value;
+            const search = document.getElementById("searchInput").value.toLowerCase();
+
+            if (category) filtered = filtered.filter(p => p.category === category);
+            if (subcategory) filtered = filtered.filter(p => p.subcategory === subcategory);
+
+            if (priceRange) {
+                const [min, max] = priceRange.split("-").map(Number);
+
+                if (max) {
+                    // ✅ Show all products less than or equal to max
+                    filtered = filtered.filter(p => p.price <= max);
+                } else {
+                    // ✅ For open-ended ranges (1001-2000), show >= min
+                    filtered = filtered.filter(p => p.price >= min);
+                }
+            }
+
+            if (rating) filtered = filtered.filter(p => p.rating >= Number(rating));
+
+            if (search) {
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(search) ||
+                    p.desc.toLowerCase().includes(search)
+                );
+            }
+
+            renderProducts(filtered);
+        }
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderProducts(products);
+
+            // Filters
+            document.getElementById("categoryFilter").addEventListener("change", e => {
+                updateSubcategories(e.target.value);
+                applyFilters();
+            });
+            document.getElementById("subcategoryFilter").addEventListener("change", applyFilters);
+            document.getElementById("priceFilter").addEventListener("change", applyFilters);
+            document.getElementById("ratingFilter").addEventListener("change", applyFilters);
+            document.getElementById("searchInput").addEventListener("input", applyFilters);
+
+            // ✅ Load all subcategories at start
+            updateSubcategories("");
+        });
+
+
+    </script>
 </body>
 
 </html>

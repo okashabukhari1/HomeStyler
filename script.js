@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* ===== Navbar Shrink ===== */
-    (function() {
+    (function () {
         const nav = document.getElementById('mainNav') || document.querySelector('.navbar');
         if (!nav) return;
         const SHRINK_CLASS = 'navbar-shrink';
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTrend = document.getElementById("modalTrend");
 
     const designs = [
-        { category: "Living Room", trend: "Modern", title: "Modern Living Room", image: "Images/Modern_Living_Room.jpg", description: "A sleek modern living room with neutral tones and minimal furniture.", products: ["Sofa","Coffee Table","Wall Art"], cost: "$1,200" },
-        { category: "Living Room", trend: "Classic", title: "Classic Living Room", image: "Images/Classic_Living_Room.jpg", description: "Traditional design with elegant wooden furniture and warm tones.", products: ["Leather Sofa","Wooden Cabinet","Chandelier"], cost: "$2,000" },
-        { category: "Kitchen", trend: "Elegant", title: "Elegant Kitchen", image: "Images/Elegant_Kitchen.jpg", description: "Stylish kitchen with marble countertops and modern lighting.", products: ["Cabinets","Countertop","Pendant Lights"], cost: "$2,500" },
-        { category: "Bedroom", trend: "Minimal", title: "Minimalist Bedroom", image: "Images/Minimalist_Bedroom.jpg", description: "Simple and cozy bedroom with clean lines and soft lighting.", products: ["Bed Frame","Nightstand","Lamp"], cost: "$900" }
+        { category: "Living Room", trend: "Modern", title: "Modern Living Room", image: "Images/Modern_Living_Room.jpg", description: "A sleek modern living room with neutral tones and minimal furniture.", products: ["Sofa", "Coffee Table", "Wall Art"], cost: "$1,200" },
+        { category: "Living Room", trend: "Classic", title: "Classic Living Room", image: "Images/Classic_Living_Room.jpg", description: "Traditional design with elegant wooden furniture and warm tones.", products: ["Leather Sofa", "Wooden Cabinet", "Chandelier"], cost: "$2,000" },
+        { category: "Kitchen", trend: "Elegant", title: "Elegant Kitchen", image: "Images/Elegant_Kitchen.jpg", description: "Stylish kitchen with marble countertops and modern lighting.", products: ["Cabinets", "Countertop", "Pendant Lights"], cost: "$2,500" },
+        { category: "Bedroom", trend: "Minimal", title: "Minimalist Bedroom", image: "Images/Minimalist_Bedroom.jpg", description: "Simple and cozy bedroom with clean lines and soft lighting.", products: ["Bed Frame", "Nightstand", "Lamp"], cost: "$900" }
         // Add the rest of your designs here...
     ];
 
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!designContainer) return;
         designContainer.innerHTML = "";
 
-        const filtered = designs.filter(d => 
+        const filtered = designs.filter(d =>
             (!filterCategory || d.category === filterCategory) &&
             (!filterTrend || d.trend === filterTrend)
         );
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        filtered.forEach((d,index) => {
+        filtered.forEach((d, index) => {
             const card = document.createElement("div");
             card.className = "col-md-4";
             card.innerHTML = `
@@ -96,184 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     modalTrend && (modalTrend.textContent = design.trend);
                     designModal.show();
                 });
-            });
-        }
-    }
-
-    categoryFilter?.addEventListener("change", () => renderDesigns(categoryFilter.value, trendFilter?.value || ""));
-    trendFilter?.addEventListener("change", () => renderDesigns(categoryFilter?.value || "", trendFilter.value));
-    renderDesigns();
-
-
-    /* ===== Products Page ===== */
-    const products = [
-        { id: 1, category: 'furniture', subcategory: 'sofas', name: 'Modern Sofa', price: 799, rating: 4.5, image: 'Images/Modern Sofa.avif', description: 'Comfortable modern sofa.' },
-        { id: 2, category: 'furniture', subcategory: 'beds', name: 'Luxury Bed', price: 999, rating: 4.8, image: 'Images/Bed.jpg', description: 'King size luxury bed.' },
-        { id: 3, category: 'decor', subcategory: 'rugs', name: 'Persian Rug', price: 299, rating: 4.2, image: 'Images/Living Room.png', description: 'Elegant handmade rug.' },
-        { id: 4, category: 'lighting', subcategory: 'ceiling', name: 'Chandelier', price: 499, rating: 4.7, image: 'Images/chandelier.jpg', description: 'Modern ceiling chandelier.' }
-    ];
-
-    const subcategories = {
-        furniture: ['Sofas', 'Chairs', 'Tables', 'Beds', 'Storage'],
-        lighting: ['Ceiling', 'Wall', 'Floor', 'Table', 'Outdoor'],
-        decor: ['Rugs', 'Curtains', 'Wall Art', 'Cushions', 'Vases'],
-        kitchen: ['Cabinets', 'Countertops', 'Sinks', 'Islands', 'Backsplashes'],
-        bathroom: ['Vanities', 'Showers', 'Toilets', 'Sinks', 'Mirrors']
-    };
-
-    function getWishlist() { return JSON.parse(localStorage.getItem("wishlist")) || []; }
-    function saveWishlist(list) { localStorage.setItem("wishlist", JSON.stringify(list)); }
-    function updateWishlistCount() { const el = document.getElementById("wishlistCount"); if(el) el.textContent = getWishlist().length; }
-
-    function renderProducts() {
-        const container = document.getElementById('productsContainer');
-        if (!container) return;
-        container.innerHTML = '';
-
-        const category = document.getElementById('categoryFilter')?.value || 'all';
-        const subcategory = document.getElementById('subcategoryFilter')?.value || 'all';
-        const maxPrice = parseFloat(document.getElementById('priceFilter')?.value) || Infinity;
-        const minRating = parseFloat(document.getElementById('ratingFilter')?.value) || 0;
-
-        const filtered = products.filter(p => 
-            (category==='all'||p.category===category) &&
-            (subcategory==='all'||p.subcategory===subcategory) &&
-            p.price<=maxPrice &&
-            p.rating>=minRating
-        );
-
-        if(!filtered.length){ container.innerHTML='<p class="text-center">No products found.</p>'; return; }
-
-        filtered.forEach(p => {
-            const card = document.createElement('div');
-            card.className = 'col-md-4';
-            card.innerHTML = `
-                <div class="card product-card h-100 shadow-sm" data-id="${p.id}">
-                    <img src="${p.image}" class="card-img-top" alt="${p.name}">
-                    <div class="card-body">
-                        <h5 class="card-title">${p.name}</h5>
-                        <p class="card-text">${p.description}</p>
-                        <p class="fw-bold">$${p.price}</p>
-                        <p class="star-rating">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}</p>
-                        <button class="btn btn-dark w-100 add-to-wishlist"><i class="bi bi-heart"></i> Add to Wishlist</button>
-                    </div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-
-        container.querySelectorAll(".add-to-wishlist").forEach(btn=>{
-            btn.addEventListener("click", ()=>{
-                const card = btn.closest(".product-card");
-                const product = {
-                    id: card.dataset.id,
-                    title: card.querySelector(".card-title").textContent,
-                    price: card.querySelector(".fw-bold").textContent,
-                    image: card.querySelector("img").src
-                };
-                let list = getWishlist();
-                if(!list.some(x=>x.id===product.id)){
-                    list.push(product); saveWishlist(list); updateWishlistCount();
-                    btn.innerHTML=`<i class="bi bi-check2"></i> Added`; btn.disabled=true;
-                }
-            });
-        });
-    }
-
-    document.getElementById('categoryFilter')?.addEventListener('change', renderProducts);
-    document.getElementById('subcategoryFilter')?.addEventListener('change', renderProducts);
-    document.getElementById('priceFilter')?.addEventListener('change', renderProducts);
-    document.getElementById('ratingFilter')?.addEventListener('change', renderProducts);
-    renderProducts();
-
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-    const wishlistContainer = document.getElementById("wishlistItems"); // container for wishlist items
-    const wishlistCountEl = document.getElementById("wishlistCount");
-
-    // Helper functions
-    function getWishlist() { return JSON.parse(localStorage.getItem('wishlist')) || []; }
-    function saveWishlist(list) { localStorage.setItem('wishlist', JSON.stringify(list)); }
-    function updateWishlistCount() { 
-        if (wishlistCountEl) wishlistCountEl.textContent = getWishlist().length; 
-    }
-
-    // Render wishlist
-    function renderWishlist() {
-        const wishlist = getWishlist();
-        if(!wishlistContainer) return;
-
-        wishlistContainer.innerHTML = '';
-        if(!wishlist.length) {
-            wishlistContainer.innerHTML = '<p class="text-center text-muted">Your wishlist is empty.</p>';
-            return;
-        }
-
-        wishlist.forEach((item, index) => {
-            const col = document.createElement('div');
-            col.className = 'col-md-4';
-            col.innerHTML = `
-                <div class="card h-100 shadow-sm">
-                    <img src="${item.image}" class="card-img-top" alt="${item.title}">
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">${item.title}</h5>
-                        <p class="fw-bold">${item.price}</p>
-                        <button class="btn btn-danger mt-auto remove-btn" data-index="${index}">
-                            <i class="bi bi-trash"></i> Remove
-                        </button>
-                    </div>
-                </div>
-            `;
-            wishlistContainer.appendChild(col);
-        });
-
-        // Attach remove button events
-        wishlistContainer.querySelectorAll('.remove-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const idx = parseInt(btn.dataset.index);
-                const wishlist = getWishlist();
-                wishlist.splice(idx, 1);
-                saveWishlist(wishlist);
-                updateWishlistCount();
-                renderWishlist();
-            });
-        });
-    }
-
-    // Initial render
-    renderWishlist();
-    updateWishlistCount();
-});
-});
-document.addEventListener("DOMContentLoaded", () => {
-    const productList = document.getElementById("productList");
-    const categoryFilter = document.getElementById("categoryFilter");
-    const subcategoryFilter = document.getElementById("subcategoryFilter");
-    const priceFilter = document.getElementById("priceFilter");
-    const ratingFilter = document.getElementById("ratingFilter");
-    const searchInput = document.getElementById("searchInput");
-
-    const allProducts = Array.from(productList.querySelectorAll(".product-card"));
-
-    // Define 3 subcategories per category
-    const subcategoriesMap = {
-        "Furniture": ["Sofas and Couches", "Chairs and Recliners", "Tables"],
-        "Lighting": ["Ceiling Lights", "Wall Lights", "Table Lamps"],
-        "Decor": ["Rugs and Carpets", "Wall Art and Mirrors", "Vases and Plant Pots"],
-        "Kitchen": ["Cabinets and Pantries", "Countertops", "Sinks and Faucets"],
-        "Bathroom": ["Vanities and Cabinets", "Showers and Bathtubs", "Toilets and Bidets"]
-    };
-
-    function populateSubcategories() {
-        const category = categoryFilter.value;
-        subcategoryFilter.innerHTML = `<option value="">All Subcategories</option>`;
-        if (category && subcategoriesMap[category]) {
-            subcategoriesMap[category].forEach(sub => {
-                const option = document.createElement("option");
-                option.value = sub;
-                option.textContent = sub;
-                subcategoryFilter.appendChild(option);
             });
         }
     }
@@ -324,6 +146,61 @@ document.addEventListener("DOMContentLoaded", () => {
             msg.remove();
         }
     }
+    // Update the floating cart counter
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let count = 0;
+        cart.forEach(item => count += item.quantity);
+
+        const counter = document.getElementById("cart-count");
+        if (counter) counter.textContent = count;
+    }
+
+    // Add product to cart
+    function addToCart(product) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // check if already in cart
+        let existing = cart.find(item => item.id === product.id);
+        if (existing) {
+            existing.quantity += 0;
+        } else {
+            product.quantity = 0;
+            cart.push(product);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // ✅ update counter immediately
+        updateCartCount();
+
+        // 🔥 optional: animate cart icon
+        const cartIcon = document.getElementById("cart-icon");
+        cartIcon.classList.add("cart-bounce");
+        setTimeout(() => cartIcon.classList.remove("cart-bounce"), 500);
+    }
+
+    // Listen for clicks on "Add to Cart" buttons
+    document.addEventListener("click", e => {
+        if (e.target.classList.contains("add-to-cart")) {
+            const btn = e.target;
+
+            const product = {
+                id: btn.dataset.id,
+                name: btn.dataset.name,
+                price: Number(btn.dataset.price),
+                image: btn.dataset.image
+            };
+
+            addToCart(product);
+        }
+    });
+
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", updateCartCount);
+
+    // Optional: update if multiple tabs open
+    window.addEventListener("storage", updateCartCount);
 
     categoryFilter.addEventListener("change", () => { populateSubcategories(); updateProducts(); });
     subcategoryFilter.addEventListener("change", updateProducts);
