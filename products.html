@@ -327,27 +327,24 @@
         ]
 
         // Subcategories mapping
+        const subcategories = {
+            Furniture: ["Sofas and Couches", "Chairs and Recliners", "Tables"],
+            Lighting: ["Ceiling Lights", "Wall Lights", "Table Lamps"],
+            Decor: ["Rugs and Carpets", "Wall Art and Mirrors", "Vases and Plant Pots"],
+            Kitchen: ["Cabinets and Pantries", "Countertops", "Sinks and Faucets"],
+            Bathroom: ["Vanities and Cabinets", "Showers and Bathtubs", "Toilets and Bidets"]
+        };
+
         function updateSubcategories(category) {
             const subFilter = document.getElementById("subcategoryFilter");
             subFilter.innerHTML = `<option value="">All Subcategories</option>`;
 
             if (category && subcategories[category]) {
-                // Show only subcategories of selected category
                 subcategories[category].forEach(sub => {
                     const opt = document.createElement("option");
                     opt.value = sub;
                     opt.textContent = sub;
                     subFilter.appendChild(opt);
-                });
-            } else {
-                // ✅ Default: show all subcategories from all categories
-                Object.keys(subcategories).forEach(cat => {
-                    subcategories[cat].forEach(sub => {
-                        const opt = document.createElement("option");
-                        opt.value = sub;
-                        opt.textContent = `${cat} → ${sub}`; // clearer grouping
-                        subFilter.appendChild(opt);
-                    });
                 });
             }
         }
