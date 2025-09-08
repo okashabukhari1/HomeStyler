@@ -211,5 +211,116 @@ document.addEventListener("DOMContentLoaded", () => {
     populateSubcategories();
     updateProducts();
 });
+// Back to Top Button
+const backToTop = document.getElementById("backToTop");
+let hasBounced = false;
+
+// Show button when scrolling down
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+        backToTop.classList.add("show");
+
+        // Add bounce only the first time
+        if (!hasBounced) {
+            backToTop.classList.add("bounce-once");
+            hasBounced = true;
+
+            // Remove bounce class after animation finishes
+            setTimeout(() => {
+                backToTop.classList.remove("bounce-once");
+            }, 600);
+        }
+
+    } else {
+        backToTop.classList.remove("show");
+    }
+});
+
+// Scroll to top smoothly when clicked
+backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+// ensure this script runs after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount(); // initialize badge from localStorage
+});
+
+// update count and animate badge + icon
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const total = cart.reduce((sum, it) => sum + (it.quantity || 1), 0);
+    const badge = document.getElementById('cart-count');
+    const icon = document.getElementById('cart-icon');
+
+    if (!badge || !icon) return;
+
+    badge.textContent = total;
+    badge.style.display = total > 0 ? 'inline-block' : 'none';
+
+    if (total > 0) {
+        // restart animation
+        badge.classList.remove('cart-animate');
+        icon.classList.remove('cart-animate');
+        void badge.offsetWidth; // force reflow
+        badge.classList.add('cart-animate');
+        icon.classList.add('cart-animate');
+
+        // remove after animation ends (safety)
+        setTimeout(() => {
+            badge.classList.remove('cart-animate');
+            icon.classList.remove('cart-animate');
+        }, 500);
+    }
+}
+
+// helper to add a product object to cart in localStorage
+// product must be { id: string|number, name, price, image, quantity? }
+function addToCart(product) {
+    if (!product || !product.id) return;
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const existing = cart.find(i => String(i.id) === String(product.id));
+    if (existing) existing.quantity = (existing.quantity || 1) + (product.quantity || 1);
+    else cart.push({ ...product, quantity: product.quantity || 1 });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+}
+
+/* Example: if you have buttons with class .add-to-cart and data attributes, this will hook them automatically */
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.add-to-cart');
+    if (!btn) return;
+    const product = {
+        id: btn.dataset.id,
+        name: btn.dataset.name,
+        price: parseFloat(btn.dataset.price || 0),
+        image: btn.dataset.image,
+        quantity: 1
+    };
+    addToCart(product);
+
+    // give quick feedback on the button (optional)
+    const original = btn.innerHTML;
+    btn.innerHTML = '✔ Added';
+    btn.disabled = true;
+    setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 1400);
+});
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+
+    // Update count when adding to cart
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener("click", updateCartCount);
+    });
+});
+
+
+
+
 
 
